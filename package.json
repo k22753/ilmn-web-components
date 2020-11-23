@@ -3,10 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint"
+    "start": "ng serve --port 4203",
+    "build": "npm run build:wc && ng build",
+    "build:wc": "ng build web-components-lib && npm i dist/web-components-lib --save-optional",
+    "build:lib": "ng build web-components-lib",
+    "build:watch": "ng build web-components-lib --watch",
+    "test": "ng test web-components-lib",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build_lib": "ng build web-components-lib",
+    "npm_pack": "cd dist/web-components-lib && npm pack",
+    "package": "npm run build_lib && npm run npm_pack"
   },
   "private": true,
   "dependencies": {
@@ -41,5 +48,8 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
+  },
+  "optionalDependencies": {
+    "@ilmn/components-lib": "file:dist/web-components-lib"
   }
 }
