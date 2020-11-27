@@ -45,7 +45,11 @@
     },
     "web-app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/web-app",
       "sourceRoot": "projects/web-app/src",
       "prefix": "app",
@@ -64,7 +68,7 @@
               "projects/web-app/src/assets"
             ],
             "styles": [
-              "projects/web-app/src/styles.css"
+              "projects/web-app/src/styles.scss"
             ],
             "scripts": []
           },
@@ -127,7 +131,7 @@
               "projects/web-app/src/assets"
             ],
             "styles": [
-              "projects/web-app/src/styles.css"
+              "projects/web-app/src/styles.scss"
             ],
             "scripts": []
           }

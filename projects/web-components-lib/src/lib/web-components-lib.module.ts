@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { WebComponentsLibComponent } from './web-components-lib.component';
 
-
-
+import { SimpleButtonModule } from "./simple-button/simple-button.module"
 @NgModule({
-  declarations: [WebComponentsLibComponent],
-  imports: [
+  declarations: [],
+  imports: [SimpleButtonModule
   ],
-  exports: [WebComponentsLibComponent]
+  exports: [SimpleButtonModule]
 })
 export class WebComponentsLibModule { }
