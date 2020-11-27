@@ -1,0 +1,5 @@
+<button class="ilmn-button" [attr.type]="type" [class]="styleClass" [disabled]="disabled" [ngStyle]="style"
+    (click)="onClick.emit($event)">
+    <ng-content></ng-content>
+    <span>{{label}}</span>
+</button>

@@ -1,0 +1,10 @@
+.ilmn-button,
+.ilmn-button:focus {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.ilmn-button:disabled {
+  cursor: not-allowed;
+}

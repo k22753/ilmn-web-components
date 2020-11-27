@@ -1,3 +1,38 @@
-<ilmn-simple-button label="test" disabled="true"></ilmn-simple-button>
+<div class="app">
 
-<ilmn-simple-button label="test 1"></ilmn-simple-button>
+    <!--  button component - disabled state -->
+    <ilmn-button label="Disabled Button" disabled="true">
+    </ilmn-button>
+
+    <!--  button component - simple class -->
+    <ilmn-button label="Simple style" styleClass="app-simple" type="button"></ilmn-button>
+
+    <!--  button component - radius class -->
+    <ilmn-button label="Radius Style" styleClass="app-radius" type="submit"></ilmn-button>
+
+    <!--  button component - linear - top to bottom gradient class -->
+    <ilmn-button label="Top to bottom gradient" styleClass="app-tob-bottom-gradient"></ilmn-button>
+
+    <!--  button component - linear - left to right gradient class -->
+    <ilmn-button label="Left to right gradient" styleClass="app-left-right-gradient"></ilmn-button>
+
+    <!--  button component - linear - top left to bottom right gradient class -->
+    <ilmn-button label="Top left to bottom right" styleClass="app-tob-left-bottom-right"></ilmn-button>
+
+    <!--  button component - linear - multi-position with specific width class -->
+    <ilmn-button label="multi-position with specific width" styleClass="app-multi-position"></ilmn-button>
+
+    <!--  button component - radial background gradient class -->
+    <ilmn-button label="radial gradient" styleClass="app-radial-gradient"></ilmn-button>
+
+    <!--  button component - style attriblur -->
+    <ilmn-button label="Inline Style" [style]="inlineStyle"></ilmn-button>
+
+    <!--  button component - onClick event -->
+    <ilmn-button label="On Click Event" styleClass="app-simple" (onClick)="buttonOnClick()">
+    </ilmn-button>
+
+    <!--  button component - ng content text -->
+    <ilmn-button label="" styleClass="app-simple"> Ng content text
+    </ilmn-button>
+</div>
