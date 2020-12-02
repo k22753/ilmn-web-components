@@ -1,0 +1,175 @@
+@import "_colors.scss";
+@import "mixins";
+@import "typography";
+
+.mdc-text-field,
+.mdc-text-field:not(.mdc-text-field--disabled) {
+  height: auto !important;
+  margin-top: 32px;
+  flex-direction: column;
+
+  .mdc-floating-label {
+    @extend .u-font--light;
+    color: #4B7CFF;
+    font-size: 28px !important;
+    letter-spacing: -0.4px;
+    top: 8px;
+    text-overflow: unset;
+    overflow: initial;
+
+    &--float-above,
+    &--shake {
+      animation: none;
+      font-size: 28px !important;
+      transform: translateY(-150%);
+    }
+
+    .ui-text-field--dense & {	
+      font-size: 44px !important;
+    }
+  }
+
+  .mdc-text-field--invalid & {
+    color: $color-solid-red;
+  }
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label 
+.mdc-text-field--disabled {
+  opacity: 0.3;
+}
+
+.ui-text-field--clear-link {
+  color: $color-grey-30;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 8px;
+  text-align: center;
+  width: 30px;
+  position: relative;
+  top: 2px;
+}
+
+// Outline of text field, angular has this as a separate DOM element
+.mdc-notched-outline {
+  border: 0;
+
+  &__leading {
+    display: none;
+  }
+
+  &__notch,
+  &__trailing {
+    border: 0;
+  }
+
+  .mdc-floating-label.mdc-floating-label--float-above {
+    @extend .u-font--light;
+    color: $color-grey-30 !important;
+    top: 4px;
+  }
+}
+
+.mdc-text-field--invalid .mdc-notched-outline  {
+  border-bottom-color: $color-solid-red;
+  border-image: unset;
+}
+
+.ui-form-field {
+  display: block;
+  height:  65px;
+  margin-bottom: 16px;
+}
+
+.mdc-text-field {
+  &--outlined {
+    position: relative;
+
+    .mdc-floating-label {
+      left: 0;
+    
+      &::after {
+        content: unset !important;
+      }
+    }
+  }
+
+  &__input {
+    @extend .u-font--regular;
+    font-size: 28px !important;
+    color: $color-solid-grad-fallback !important;
+    letter-spacing: 0.1px;
+    line-height: 32px;
+    margin-top: 9px;
+    padding: 0 !important;
+    caret-color: $color-solid-grad-fallback !important;
+
+    .ui-text-field--dense & {	
+      font-size: 44px !important;
+    }
+
+    &:read-only {
+      color: $color-grey-50 !important;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .mdc-text-field--invalid & {
+      color: $color-solid-red !important;
+      caret-color: $color-solid-red !important;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .ui-text-field--inline & {
+      flex-grow: 1;
+    }
+
+    .ui-text-field--focus-set & {
+        @extend .u-font--medium;
+    }
+
+    &.ui-text-field--password-input {
+        -webkit-text-security: disc;
+    }
+
+    &::placeholder {
+        color: $color-solid-grad-fallback;
+        opacity: 0.5 !important;
+    }
+  }
+
+  &-helper-text {
+    opacity: 1 !important;
+  
+    &::before {
+      content: unset;
+    }
+  }
+}
+
+.ui-text-field__file-text {
+  @extend h4;
+  @extend .u-font--regular;
+}
+
+.ui-text-field--large {
+  mdc-line-ripple {
+    display: none;
+  }
+
+  .mdc-text-field__input {
+    @extend .u-font--regular;
+    border: 0;
+    font-size: 110px !important;
+    
+    line-height: 131px;
+    height: 131px;
+    text-align: center;
+  }
+}

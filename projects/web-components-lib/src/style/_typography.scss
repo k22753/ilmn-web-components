@@ -1,0 +1,117 @@
+@import "_colors.scss"; // Full filename needed since there's an npm sub-dependency called 'colors
+@import "mixins";
+
+%font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+%u-font,
+.u-font {
+  &--ultra-thin {
+    font-weight: 100;
+  }
+  &--thin {
+    font-weight: 200; 
+  }
+
+  &--light {
+    font-weight: 300; 
+  }
+
+  &--regular {
+    font-weight: 400; 
+  }
+
+  &--medium {
+    font-weight: 500; 
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--upper {
+    text-transform: uppercase;
+  }
+}
+
+%u-overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+strong {
+  font-weight: 500; 
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %font-inter;
+  @extend .u-font--thin;
+  @include blur();
+  color: $color-grey-50;
+  margin: 0;
+}
+
+h1 {
+  font-size: 140px;
+  letter-spacing: -4px;
+  line-height: (165 / 140); // 165px
+}
+
+h2 { 
+  font-size: 110px;
+  letter-spacing: -1.4px;
+  line-height: (130 / 110); // 131px
+}
+
+h3 {
+  font-size: 44px;
+  letter-spacing: -0.4px;
+  line-height: (54 / 40); // 54px
+}
+
+h4 {
+  font-size: 28px;
+  letter-spacing: -0.4px;
+  line-height: (36 / 28); // 36px
+}
+
+h5 {
+  @extend %u-font--light;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  line-height: (28 / 18); // 38px
+}
+
+%u-gradient-text {
+  background-image: $gradient-btn-bkgd-primary !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important; // Shows the background gradient
+}
+
+a:link,
+.ui-link,
+%ui-link {
+  @extend %font-inter;
+  @extend %u-gradient-text;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.blurable {
+  @include blur();
+}
+
+.no-focus {
+  filter: none!important;
+  opacity: 1!important;
+} 
+  

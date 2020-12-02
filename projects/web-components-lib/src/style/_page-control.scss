@@ -1,0 +1,38 @@
+
+.ui-page-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 260px;
+    z-index: 10;
+
+    &__previous-btn {
+        margin-left: 60px;
+    }
+
+    &__next-btn {
+        margin-right: 60px;
+    }
+
+    &__btn-text {
+        margin-right: 26px;
+    }
+
+    &--back-control {
+        align-items: flex-start;
+        width: 260px;
+    }
+
+    &--forward-control {
+        align-items: flex-end;
+        width: 260px;
+    }
+
+    &__content {
+        flex-grow: 1;
+        justify-content: center;
+        max-width: 1190px;
+    }
+
+}

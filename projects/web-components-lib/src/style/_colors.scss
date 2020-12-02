@@ -1,0 +1,140 @@
+$color-border-default: rgb(150, 150, 150);
+$color-white: #ffff;
+$color-black: #ffff;
+$color-primary: #2196f3;
+$color-secondary: #607d8b;
+$color-success: #689f38;
+$color-info: #0288d1;
+$color-warning: #fbc02d;
+$color-help: #9c27b0;
+$color-danger: #d32f2f;
+$color-link: #0b7ad1;
+
+// SOLID COLORS -------------------------------------
+
+// Greys
+$color-grey-10: #f0eff0;
+$color-grey-20: #d1cfd1;
+$color-grey-30: #918d91;
+$color-grey-40: #716d71;
+$color-grey-50: #534f54;
+$color-grey-60: #322d32;
+$color-gray-radial-gradient: #ededed;
+
+// Sunsets
+$color-sunset-blue: #8a90ff;
+$color-sunset-violet: #d88afc;
+$color-sunset-pink: #ffa1b5;
+$color-sunset-peach: #ffba9f;
+
+// Solids
+$color-solid-blue: #4a7cff;
+$color-solid-purple: #743fff;
+$color-solid-red: #bf4252;
+$color-solid-orange: #ffac41;
+$color-solid-info: $color-grey-30;
+$color-solid-warning: $color-solid-orange;
+$color-solid-error: $color-solid-red;
+
+$color-solid-grad-fallback: #615fff;
+
+$color-dividers: #d8d8d8;
+
+$color-sequencing-date: #656066;
+
+// Type
+$color-type-default: $color-grey-50;
+$color-btn-type-primary: white;
+$color-btn-type-default: $color-grey-50;
+
+// Icons
+$color-icon-link: $color-grey-30;
+$color-icon-hover: $color-solid-blue;
+$color-icon-active: $color-solid-blue;
+$color-icon-disabled: rgba($color-grey-30, 0.3);
+$color-icon-panel: #adabad;
+
+// Transparent
+$color-white-0: rgba(white, 0);
+
+// Notifications
+$color-notifcation-error: $color-solid-red;
+$color-notifcation-warning: $color-solid-orange;
+$color-notifcation-info: $color-solid-blue;
+
+// Background overlay
+$background-color-overlay: rgba(255, 255, 255, 0.8);
+
+// GRADIENTS ----------------------------------------
+
+$gradient-blue-45: linear-gradient(
+  45deg,
+  $color-solid-blue 0%,
+  $color-solid-purple 100%
+);
+$gradient-blue-link: linear-gradient(45deg, #225de6 0%, #7723e6 100%);
+
+// Type
+$gradient-type-link: $gradient-blue-45;
+
+// Loading gradients
+$gradient-sequencing-blue: radial-gradient(
+  circle at top right,
+  rgba($color-sunset-blue, 0.7) 0%,
+  $color-white-0 65%
+);
+$gradient-sequencing-violet: radial-gradient(
+  circle at top left,
+  rgba($color-sunset-violet, 0.7) 0%,
+  $color-white-0 65%
+);
+$gradient-sequencing-pink: radial-gradient(
+  circle at bottom right,
+  rgba($color-sunset-pink, 0.7) 0%,
+  $color-white-0 65%
+);
+$gradient-sequencing-peach: radial-gradient(
+  circle at bottom left,
+  rgba($color-sunset-peach, 0.7) 0%,
+  $color-white-0 65%
+);
+$gradient-sequencing-sunset: linear-gradient(
+  180deg,
+  rgba($color-sunset-pink, 0.8) 0%,
+  rgba($color-sunset-peach, 0.8) 100%
+);
+
+// Buttons
+$gradient-btn-bkgd-primary: linear-gradient(
+  45deg,
+  $color-solid-blue 0%,
+  $color-solid-purple 100%
+);
+$gradient-btn-bkgd-default: radial-gradient(
+  ellipse at center,
+  white 0%,
+  #f5f5f5 100%
+);
+
+// Icon backgrounds
+$gradient-sequencing: $gradient-sequencing-peach, $gradient-sequencing-violet,
+  $gradient-sequencing-blue, $gradient-sequencing-pink,
+  $gradient-sequencing-sunset;
+
+$gradient-white-circle: radial-gradient(
+  50% 100%,
+  white 50%,
+  $color-gray-radial-gradient 100%
+);
+$gradient-white-sub-circle: radial-gradient(50% 100%, white 50%, #f0f0f0 100%);
+// List
+$gradient-list-before: linear-gradient(
+  0deg,
+  rgba(255, 255, 255, 0) 0%,
+  #ffffff 75%
+);
+$gradient-list-after: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0) 0%,
+  #ffffff 100%
+);

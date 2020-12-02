@@ -1,0 +1,13 @@
+
+@import "mixins";
+
+.set-as-focused {
+    transform: scale(1);
+    transition: all 200ms ease;
+    transform-origin: 50px center;
+
+    &.no-focus {
+        transform: scale(1.25);
+        transform-origin: 50px center;
+    }
+}

@@ -1,0 +1,121 @@
+@import "_colors.scss";
+@import "mixins";
+@import "typography";
+
+$arrowSize: 16px;
+$transparentBorder: $arrowSize solid transparent;
+$whiteBorder: $arrowSize solid white;
+
+.ui-popover {
+  background: #FFFFFF;
+  box-shadow: 0 0 30px -5px rgba(117,112,116,0.60);
+  margin-top: 18px;
+  max-width: 320px;
+  padding: 32px;
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+  }
+
+  &__icon {
+    left: 24px;
+    position: absolute;
+    top: 34px;
+  }
+
+  p {
+    @extend h5;
+    @extend %u-font--medium;
+    color: $color-grey-50;
+    display: inline-block;
+    line-height: 32px;
+    font-weight: 500 !important;
+    max-width: 320px;
+  }
+}
+
+.sat-popover {
+  &-container {
+    position: relative;
+  }
+
+  // Horizontal alignments
+  &-before .ui-popover::before {
+    border-top: $transparentBorder;
+    border-bottom: $transparentBorder;
+    border-left: $whiteBorder;
+    margin-top: -50%;
+    right: -$arrowSize;
+    top: 50%;
+  }
+
+  // Horizontal alignments
+  &-after .ui-popover::before {
+    border-top: $transparentBorder;
+    border-bottom: $transparentBorder;
+    border-right: $whiteBorder;
+    margin-top: -50%;
+    left: -$arrowSize;
+    top: 50%;
+  }
+
+  // Vertical alignments
+  &-below .ui-popover::before {
+    border-left: $transparentBorder;
+    border-right: $transparentBorder;
+    border-bottom: $whiteBorder;
+    top: -$arrowSize;
+  }
+
+  &-above {
+    top: -20px;
+
+    .ui-popover::before {
+      border-left: $transparentBorder;
+      border-right: $transparentBorder;
+      border-top: $whiteBorder;
+      bottom: -$arrowSize;
+    }
+  }
+
+  &-center {
+    .ui-popover::before {
+      left: 50%;
+      margin-left: -$arrowSize;
+    }
+  }
+
+  &-center.sat-popover-before {
+    right: 20px;
+    top: -11px;
+
+    .ui-popover::before {
+      border-top: $transparentBorder;
+      border-bottom: $transparentBorder;
+      border-left: $whiteBorder;
+      left: auto;
+      margin-left: 0;
+      margin-top: -$arrowSize;
+      right: -$arrowSize;
+      top: 50%;
+    }
+  }
+
+  &-center.sat-popover-after {
+    left: 20px;
+    top: -11px;
+
+    .ui-popover::before {
+      border-top: $transparentBorder;
+      border-bottom: $transparentBorder;
+      border-right: $whiteBorder;
+      left: auto;
+      margin-left: 0;
+      margin-top: -$arrowSize;
+      left: -$arrowSize;
+      top: 50%;
+    }
+  }
+}

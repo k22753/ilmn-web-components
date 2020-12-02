@@ -6,14 +6,9 @@ import { AppComponent } from './app.component';
 import { WebComponentsLibModule } from '@ilmn/components-lib';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    WebComponentsLibModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, WebComponentsLibModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
