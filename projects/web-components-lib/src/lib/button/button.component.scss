@@ -1,82 +1,159 @@
 @import "../../styles";
 
-.ilmn-button {
-  border: none;
-  cursor: pointer;
-  @include padding(0.5rem, 1rem, 0.5rem, 1rem);
-  font-size: 1rem;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
-    box-shadow 0.2s;
-  border-radius: 3px;
+.ilmn-btn {
+    @extend %font-inter;
+    @include blur();
+    border: 0;
+    cursor: pointer;
+    white-space: nowrap; 
+    text-align: center;
 
-  &:focus {
-    outline: none;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active,
+    &.ilmn-btn-active {
+        &:not([disabled]) {
+            transform: scale(1.03) perspective(1px);
+        }
+    }
+
+    &:focus:active,
+    &-active {
+        outline: none;
+        transform: scale(0.97) perspective(1px) !important;
+    }
+
+    &-primary,
+    &-secondary {
+        @extend %font-inter;
+        @extend .u-font--regular;
+       
+        font-size: 15px;
+        letter-spacing: 0.4px;
+        line-height: 1.2;
+        opacity: 1;
+        padding: 15px 25px;
+        position: relative;
+        text-transform: uppercase;
+        transition: opacity 1500ms ease-out;
+        will-change: opacity;
+    }
+
+    &-primary {
+        background: $gradient-btn-bkgd-primary;
+        color:$color-white;
+    }
+
+    &-raised {
+        @extend %active-btn-box-shadow;
+    }
+
+    &-round {
+      border-radius: 40px;
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
-
-  &- {
-    &raised {
-      @include raised;
+    &-secondary {
+        background: $color-grey-10;
+        border: 1px solid $color-white;
+        color: $color-grey-60;
     }
 
-    &round {
-      border-radius: 2rem;
+    &-small {
+        padding: 13px 25px !important;
     }
 
-    &primary {
-      color: $color-white;
-      background: $color-primary;
-      border: 1px solid $color-primary;
+    &-link {
+        @extend %u-font--medium;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        padding: 8px;
     }
 
-    &secondary {
-      color: $color-white;
-      background: $color-secondary;
-      border: 1px solid $color-secondary;
+    &[disabled],
+    &:enabled:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+        user-select: none;
     }
 
-    &success {
-      color: $color-white;
-      background: $color-success;
-      border: 1px solid $color-success;
+    &-icon {
+        @include circle;
+        background: transparent;
+        color: $color-grey-30;
+        font-size: 40px;
+        height: 80px;
+        justify-content: center;
+        padding: 0;
+        width: 80px;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus:active,
+        &.ilmn-btn-active {
+            &:not([disabled]),
+            &:not([ng-reflect-disabled="true"]) {
+                color: $color-solid-blue;
+            }
+        }
     }
 
-    &info {
-      color: $color-white;
-      background: $color-info;
-      border: 1px solid $color-info;
+    // Icon button type
+    &-icon.ilmn-btn-primary,
+    &-icon.ilmn-btn-alternative {
+        color: $color-white;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus:active,
+        &.ilmn-btn-active {
+            &:not([disabled]),
+            &:not([ng-reflect-disabled="true"])  {
+                color: $color-white;
+            }
+        }
     }
 
-    &warning {
-      color: $color-black;
-      background: $color-warning;
-      border: 1px solid $color-warning;
+    &-primary.ilmn-btn-icon {
+        background-image: $gradient-btn-bkgd-primary;
     }
 
-    &help {
-      color: $color-white;
-      background: $color-help;
-      border: 1px solid $color-help;
+    &-secondary.ilmn-btn-icon {
+        background: $color-grey-10;
+        
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus:active,
+        &.ilmn-btn-active {
+            &:not([disabled]),
+            &:not([ng-reflect-disabled="true"])  {
+                color: $color-grey-30;
+            }
+        }
     }
 
-    &danger {
-      color: $color-white;
-      background: $color-danger;
-      border: 1px solid $color-danger;
+    &-alternative {
+        background-image: linear-gradient(45deg, rgba($color-solid-blue, 0.05) 0%, rgba($color-solid-purple, 0.05) 100%), $gradient-sequencing;
+        
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus:active {
+            &:not([disabled]),
+            &:not([ng-reflect-disabled="true"])  {
+                color: $color-grey-30;
+            }
+        }
     }
-
-    &link {
-      color: $color-link;
-      background: transparent;
-      border: transparent;
-
-      &:enabled:hover {
-        text-decoration: underline;
-      }
-    }
-  }
 }
