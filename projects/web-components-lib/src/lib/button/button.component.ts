@@ -6,7 +6,7 @@ import {
   Input,
   Output,
   EventEmitter,
-  ElementRef
+  ElementRef,
 } from '@angular/core';
 import { Utils } from '../utils';
 
@@ -16,20 +16,24 @@ const BUTTON_HOST_ATTRIBUTES = [
   'raised',
   'alternative',
   'link',
-  'small'
+  'small',
 ];
 
 @Component({
-  selector: 'button[ilmn-button], a[ilmn-button]',
+  selector: 'button[ilmn-button], button[ilmn-icon-button],  a[ilmn-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent implements OnInit {
+  /** Whether the button is icon button. */
+  readonly isIconButton: boolean = this._hasHostAttributes('ilmn-icon-button');
 
   @Input()
-  get disabled(): boolean { return this._disabled; }
+  get disabled(): boolean {
+    return this._disabled;
+  }
   set disabled(value: boolean) {
     const newValue = Utils.toBoolean(value);
     if (newValue !== this._disabled) {
@@ -47,20 +51,26 @@ export class ButtonComponent implements OnInit {
     // attributes, add the correct corresponding class.
     BUTTON_HOST_ATTRIBUTES.forEach((attr) => {
       if (this._hasHostAttributes(attr)) {
-        (elementRef.nativeElement as HTMLElement).classList.add(classPrefix + attr);
+        (elementRef.nativeElement as HTMLElement).classList.add(
+          classPrefix + attr
+        );
       }
     });
+
+    if (this.isIconButton) {
+      (elementRef.nativeElement as HTMLElement).classList.add('ilmn-btn-icon');
+    }
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   private _getHostElement() {
     return this.elementRef.nativeElement;
   }
 
   private _hasHostAttributes(...attributes: string[]) {
-    return attributes.some(attribute => this._getHostElement().hasAttribute(attribute));
+    return attributes.some((attribute) =>
+      this._getHostElement().hasAttribute(attribute)
+    );
   }
 }
