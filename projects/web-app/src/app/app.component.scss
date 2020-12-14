@@ -5,3 +5,9 @@
 .app > div {
   margin-bottom: 30px;
 }
+
+.app {
+  &-check-type {
+    margin: 30px;
+  }
+}

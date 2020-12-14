@@ -1,0 +1,9 @@
+<div class="ilmn-checkbox ilmn-default" [ngClass]="{
+  'ilmn-checkbox--radio': type === 'radio',
+  'ilmn-checkbox--round': type === 'radio'}">
+  <input #inputControl [id]="id" [type]="type" [name]="name" [checked]="isSelected" [disabled]="disabled"
+    (click)="changeState()" />
+  <div class="state">
+    <label class="ilmn-checkbox__label">{{ label }}</label>
+  </div>
+</div>

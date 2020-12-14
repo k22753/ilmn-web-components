@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@material/checkbox/mdc-checkbox';
+@use '@material/checkbox';
+@use '@material/radio/mdc-radio';
+@use '@material/radio';
+@use '@material/switch/mdc-switch';
+@use '@material/switch';
+@use '@material/form-field/mdc-form-field';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -17,6 +17,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-mdc/web": "^5.1.1",
     "@angular/animations": "~11.0.1",
     "@angular/cdk": "^11.0.1",
     "@angular/common": "~11.0.1",

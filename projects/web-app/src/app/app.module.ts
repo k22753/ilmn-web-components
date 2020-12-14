@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { WebComponentsLibModule } from '@ilmn/components-lib';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { MdcCheckboxModule } from '@angular-mdc/web/checkbox';
+import { MdcFormFieldModule } from '@angular-mdc/web/form-field';
+import { MdcSwitchModule } from '@angular-mdc/web/switch';
+import { MdcRadioModule } from '@angular-mdc/web/radio';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +18,10 @@ import { MatIconModule } from '@angular/material/icon';
     WebComponentsLibModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MdcCheckboxModule,
+    MdcFormFieldModule,
+    MdcSwitchModule,
+    MdcRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
