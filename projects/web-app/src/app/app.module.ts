@@ -10,6 +10,7 @@ import { MdcCheckboxModule } from '@angular-mdc/web/checkbox';
 import { MdcFormFieldModule } from '@angular-mdc/web/form-field';
 import { MdcSwitchModule } from '@angular-mdc/web/switch';
 import { MdcRadioModule } from '@angular-mdc/web/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,8 @@ import { MdcRadioModule } from '@angular-mdc/web/radio';
     BrowserModule,
     WebComponentsLibModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MdcCheckboxModule,
     MdcFormFieldModule,

@@ -129,7 +129,7 @@
   </div>
 
 
-  <div class="app-check-type">
+  <!-- <div class="app-check-type">
     <div>
       <ilmn-checkbox label="Checkbox"></ilmn-checkbox>
     </div>
@@ -149,18 +149,18 @@
     <div>
       <ilmn-checkbox type="radio" label="Radio Selected Disabled" isSelected="true" disabled="true"></ilmn-checkbox>
     </div>
-  </div>
+  </div> -->
 
-
+  <!-- 
   <div class="app-check-type">
     <div>
       <mdc-form-field>
         <mdc-checkbox></mdc-checkbox>
         <label>Label</label>
       </mdc-form-field>
-    </div>
+    </div> -->
 
-    <div>
+  <!-- <div>
       <mdc-form-field>
         <mdc-checkbox disabled></mdc-checkbox>
         <label>Disabled</label>
@@ -186,6 +186,52 @@
         <mdc-switch></mdc-switch>
         <label>off/on</label>
       </mdc-form-field>
+    </div>
+  </div> -->
+  <div>
+
+    <section class="ilmn-checkbox app-margin-left">
+      <span>
+        <mdc-form-field>
+          <mdc-checkbox [checked]="allComplete" [indeterminate]="someComplete()" (change)="setAll($event.checked)">
+          </mdc-checkbox>
+          <label> {{task.name}}</label>
+        </mdc-form-field>
+      </span>
+      <span>
+        <ul class="app-list">
+          <li *ngFor="let subtask of task.subtasks">
+            <mdc-form-field>
+              <mdc-checkbox [(ngModel)]="subtask.completed" (ngModelChange)="updateAllComplete()"
+                [disabled]="subtask.disabled">
+              </mdc-checkbox>
+              <label>{{subtask.name}}</label>
+            </mdc-form-field>
+          </li>
+        </ul>
+      </span>
+    </section>
+
+    <div>
+      <div [formGroup]="form" class="ilmn-checkbox app-margin-left">
+        <mdc-radio-group class="app-radio-group" formControlName="season">
+          <fieldset *ngFor="let season of seasons">
+            <legend>
+              <mdc-form-field>
+                <mdc-radio [value]="season.id" (change)="changeRadioEvent()">
+                </mdc-radio>
+                <label>{{season.label}}</label>
+              </mdc-form-field>
+            </legend>
+            <mdc-radio-group formControlName="array1">
+              <mdc-form-field *ngFor="let option of season.array">
+                <mdc-radio [value]="option" [disabled]="form.controls['season'].value != season.id"></mdc-radio>
+                <label>{{option}}</label>
+              </mdc-form-field>
+            </mdc-radio-group>
+          </fieldset>
+        </mdc-radio-group>
+      </div>
     </div>
   </div>
 </div>
