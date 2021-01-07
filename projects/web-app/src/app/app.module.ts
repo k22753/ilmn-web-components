@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { WebComponentsLibModule } from '@ilmn/components-lib';
+import { WebComponentsLibModule, DialogService } from '@ilmn/components-lib';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MdcCheckboxModule } from '@angular-mdc/web/checkbox';
@@ -11,6 +11,7 @@ import { MdcFormFieldModule } from '@angular-mdc/web/form-field';
 import { MdcSwitchModule } from '@angular-mdc/web/switch';
 import { MdcRadioModule } from '@angular-mdc/web/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MdcDialogModule } from '@angular-mdc/web/dialog';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,8 +26,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MdcFormFieldModule,
     MdcSwitchModule,
     MdcRadioModule,
+    MdcDialogModule,
   ],
-  providers: [],
+  providers: [DialogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

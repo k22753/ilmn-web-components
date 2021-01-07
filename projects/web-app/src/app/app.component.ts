@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DialogService } from '@ilmn/components-lib';
 
 @Component({
   selector: 'app-root',
@@ -39,9 +40,28 @@ export class AppComponent {
     ],
   };
 
+  modalData = {
+    dialogTitle: 'Do you want to exit the application?',
+    dialogMessage: `Press 'Yes' to exit the application. Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application. Press 'Yes' to exit the application. Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application. Press 'Yes' to exit the application. Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application. Press 'Yes' to exit the application. Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.Press 'Yes' to exit the application.`,
+    buttons: [
+      {
+        label: 'No, Take me back',
+        style: 'secondary round',
+      },
+      {
+        label: `Yes, I'M finished`,
+        style: 'primary round',
+      },
+      {
+        label: `Yes, I'M finished`,
+        style: 'primary',
+      },
+    ],
+  };
+
   allComplete: boolean = false;
 
-  constructor() { }
+  constructor(private dialogService: DialogService) { }
 
   updateAllComplete() {
     this.allComplete =
@@ -70,5 +90,13 @@ export class AppComponent {
   changeRadioEvent() {
     this.form.get('array2').setValue('');
     this.form.get('array1').setValue('');
+  }
+
+  openAlert() {
+    const dialogRef = this.dialogService.openModal(this.modalData);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
   }
 }

@@ -1,0 +1,89 @@
+/* NgxSmartModal variables override */
+
+$modal-timing: 200ms;
+$modal-end-position: 16px;
+
+::ng-deep {
+  .mdc-dialog__surface {
+    max-width: 64vw !important;
+    opacity: 1 !important;
+    will-change: opacity;
+    min-width: 600px !important;
+  }
+
+  .cdk-overlay-pane {
+    opacity: 1;
+    transition: opacity $modal-timing ease-in !important;
+    will-change: opacity;
+    z-index: 200000; // Override this to display on top of footer/hamburger menu
+  }
+
+  .mdc-dialog--close {
+    /* Needed a reverse version animation instead of reverse property to achieve clean disappear */
+    animation: ui-modal-close ($modal-timing * 0.8) ease-in forwards;
+    will-change: opacity, transform;
+  }
+
+  .mdc-dialog--open {
+    animation: ui-modal-expand $modal-timing ease-out forwards;
+    will-change: opacity, transform;
+  }
+
+  .mdc-dialog__surface {
+    padding: 30px 60px;
+    box-shadow: 0 12px 90px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .mdc-dialog__actions {
+    justify-content: center;
+    margin-top: 30px;
+
+    button {
+      margin: 20px;
+      font-size: 12px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .dialog-head {
+    color: #686569 !important;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
+
+  .dialog-sub-head {
+    color: #858386;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  @keyframes ui-modal-expand {
+    0% {
+      opacity: 0;
+      transform: scale(0.87);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ui-modal-close {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.87);
+    }
+  }
+}
+.mdc-dialog.mdc-dialog--scrollable .mdc-dialog__title, .mdc-dialog.mdc-dialog--scrollable .mdc-dialog__actions {
+   border-color:transparent !important;
+}
