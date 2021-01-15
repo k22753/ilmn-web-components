@@ -1,5 +1,10 @@
 <div class="app">
 
+  <div class="app-menu-open" (click)="drawer.open = true">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+  </div>
+
+
   <div>
     <!-- Primary button -->
     <button ilmn-button class="ilmn-btn-primary">Primary Button
@@ -237,5 +242,27 @@
 </div>
 
 <!-- Primary button -->
+
+<ilmn-drawer [drawer]="drawer">
+  <div class="drawer">
+    <div class="drawer-main">
+      <div *ngFor="let link of drawerOptions">
+        <a class="drawer-text" *ngIf="link.label">{{link.label}}</a>
+        <div *ngIf="link.divide" class="drawer-divide">
+          <hr />
+        </div>
+      </div>
+    </div>
+    <div class="drawer-shut-section">
+      <a class="drawer-text drawer-shut">
+        <span class="drawer-shuticon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24">
+            <path
+              d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z" />
+          </svg></span>Shut Down Instrument
+      </a>
+    </div>
+  </div>
+</ilmn-drawer>
 <button ilmn-button class="ilmn-btn-primary" (click)="openAlert()">Open Popover
 </button>

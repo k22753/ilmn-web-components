@@ -1,0 +1,12 @@
+<mdc-drawer drawer="modal" [open]="drawer?.open">
+    <div class="close" (click)="drawer.open = false">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+    </div>
+    <mdc-drawer-header *ngIf="drawer?.title || drawer?.subTitle">
+        <h3 mdcDrawerTitle>{{drawer?.title}}</h3>
+        <h6 mdcDrawerSubtitle>{{drawer?.subTitle}}</h6>
+    </mdc-drawer-header>
+    <mdc-drawer-content>
+        <ng-content></ng-content>
+    </mdc-drawer-content>
+</mdc-drawer>

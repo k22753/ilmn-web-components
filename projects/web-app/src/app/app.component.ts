@@ -61,6 +61,28 @@ export class AppComponent {
 
   allComplete: boolean = false;
 
+  drawer = {
+    open: false,
+
+  };
+  drawerOptions = [
+    {
+      link: '',
+      label: 'About',
+    },
+    {
+      link: '',
+      label: 'Software Update',
+    },
+    {
+      link: '',
+      label: 'Settings',
+    },
+    {
+      link: '',
+      label: 'Process Management',
+    },
+  ];
   constructor(private dialogService: DialogService) { }
 
   updateAllComplete() {

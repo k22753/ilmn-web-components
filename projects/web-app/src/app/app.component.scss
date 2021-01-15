@@ -9,6 +9,12 @@
 }
 
 .app {
+  &-menu-open {
+    margin: 50px !important;
+    color: #bfb8b8;
+    display: inline-block;
+    cursor: pointer;
+  }
   &-check-type {
     margin: 30px;
   }
@@ -40,16 +46,21 @@
   }
   .mdc-checkbox_native-control:enabled:checked ~ .mdc-checkbox_background,
   .mdc-checkbox__native-control:enabled:indeterminate
-    ~ .mdc-checkbox__background,.mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background, .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
+    ~ .mdc-checkbox__background,
+  .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
+  .mdc-checkbox__native-control:enabled:indeterminate
+    ~ .mdc-checkbox__background,
   .mdc-checkbox_native-control[disabled]:checked ~ .mdc-checkbox_background,
   .mdc-checkbox__native-control[disabled]:indeterminate
-    ~ .mdc-checkbox__background,.mdc-checkbox__native-control[disabled]:checked ~ .mdc-checkbox__background, .mdc-checkbox__native-control[disabled]:indeterminate ~ .mdc-checkbox__background {
+    ~ .mdc-checkbox__background,
+  .mdc-checkbox__native-control[disabled]:checked ~ .mdc-checkbox__background,
+  .mdc-checkbox__native-control[disabled]:indeterminate
+    ~ .mdc-checkbox__background {
     background-image: linear-gradient(43deg, #4a7cff, #4a7cff 33%, #743fff);
     border: 0 !important;
     background-color: transparent;
   }
 
-  
   .mdc-checkbox__checkmark {
     top: 4px;
     left: 4px;
@@ -142,5 +153,51 @@
   .mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background,
   .mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background {
     animation-duration: 0ms;
+  }
+}
+
+.drawer {
+  padding: 65px 34px 80px 30px;
+
+  &-text {
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    background-image: linear-gradient(45deg, #4a7cff, #743fff) !important;
+    color: transparent !important;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 300;
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  &-divide {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &-shut {
+    font-size: 22px;
+  }
+
+  &-shut-section {
+    position: absolute;
+    padding-bottom: 30px;
+    bottom: 0px;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    display: block;
+    margin-left: 30px;
+    left: 0;
+  }
+  &-shuticon {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin-right: 4px;
+    > svg {
+      fill: #4a7cff;
+    }
   }
 }

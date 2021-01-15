@@ -12,7 +12,8 @@ import { MdcSwitchModule } from '@angular-mdc/web/switch';
 import { MdcRadioModule } from '@angular-mdc/web/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MdcDialogModule } from '@angular-mdc/web/dialog';
-
+import { MdcListModule } from '@angular-mdc/web/list';
+import { MdcIconModule } from '@angular-mdc/web/icon';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -27,8 +28,10 @@ import { MdcDialogModule } from '@angular-mdc/web/dialog';
     MdcSwitchModule,
     MdcRadioModule,
     MdcDialogModule,
+    MdcListModule,
+    MdcIconModule
   ],
   providers: [DialogService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

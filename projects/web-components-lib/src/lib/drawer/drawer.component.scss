@@ -1,0 +1,25 @@
+::ng-deep .mdc-drawer--modal.mdc-drawer--open {
+  top: 0px !important;
+}
+
+.close {
+  position: absolute;
+  right: 24px;
+  top: 34px;
+  cursor: pointer;
+  color: #cecccc;
+}
+
+.mdc-drawer {
+  width: 330px;
+}
+
+::ng-deep {
+  .mdc-drawer--modal + .mdc-drawer-scrim {
+    background-color: #fff;
+    opacity: 0.8;
+  }
+  .mdc-drawer--modal {
+    box-shadow: 0px 8px 82px 18px rgb(0 0 0 / 27%);
+  }
+}
