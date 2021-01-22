@@ -5,23 +5,26 @@
 .mdc-text-field,
 .mdc-text-field:not(.mdc-text-field--disabled) {
   height: auto !important;
-  margin-top: 32px;
   flex-direction: column;
 
   .mdc-floating-label {
     @extend .u-font--light;
     color: #4B7CFF;
-    font-size: 28px !important;
+    font-size: 17px !important;
     letter-spacing: -0.4px;
-    top: 8px;
     text-overflow: unset;
     overflow: initial;
+    transform: translateY(10px);
+    left:0;
+    top: 24px;
 
     &--float-above,
     &--shake {
       animation: none;
-      font-size: 28px !important;
-      transform: translateY(-150%);
+      font-size: 22px !important;
+      transform: translateY(-115%);
+      color: grey;
+      left: 0px;
     }
 
     .ui-text-field--dense & {	
@@ -172,4 +175,16 @@
     height: 131px;
     text-align: center;
   }
+}
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  background: #fff;
+  margin:0;
+}
+.mdc-text-field .mdc-text-field__ripple, .mdc-text-field  .mdc-line-ripple {
+  display: none
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) {
+  background-color:#fff;
+  padding-top: 22px;
 }

@@ -11,6 +11,9 @@
 @use '@material/drawer/mdc-drawer';
 @use '@material/list/mdc-list';
 @use '@material/list';
+@use '@material/textfield/mdc-text-field';
+@use '@material/textfield/_index' as textfield;
+@use '@material/form-field/_index' as form-field;
 
 html,
 body {
